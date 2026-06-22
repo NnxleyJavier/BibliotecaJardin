@@ -1,0 +1,298 @@
+DEBUG - 2026-05-27 12:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-27 12:36:10 --> ErrorException: Undefined array key "clasificacion"
+[Method: POST, Route: guardar_ficha]
+in APPPATH\Models\FichaMovimientoModel.php on line 41.
+ 1 APPPATH\Models\FichaMovimientoModel.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "clasificacion"', 'C:\\xampp\\htdocs\\BibliotecaJardin\\app\\Models\\FichaMovimientoModel.php', 41)
+ 2 APPPATH\Controllers\Biblioteca.php(60): App\Models\FichaMovimientoModel->registrarFichaCompleta([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Biblioteca->guardar_ficha()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Biblioteca))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+CRITICAL - 2026-05-27 12:36:20 --> ErrorException: Undefined array key "clasificacion"
+[Method: POST, Route: guardar_ficha]
+in APPPATH\Models\FichaMovimientoModel.php on line 41.
+ 1 APPPATH\Models\FichaMovimientoModel.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "clasificacion"', 'C:\\xampp\\htdocs\\BibliotecaJardin\\app\\Models\\FichaMovimientoModel.php', 41)
+ 2 APPPATH\Controllers\Biblioteca.php(60): App\Models\FichaMovimientoModel->registrarFichaCompleta([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Biblioteca->guardar_ficha()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Biblioteca))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+CRITICAL - 2026-05-27 12:36:33 --> ErrorException: Undefined array key "clasificacion"
+[Method: POST, Route: guardar_ficha]
+in APPPATH\Models\FichaMovimientoModel.php on line 41.
+ 1 APPPATH\Models\FichaMovimientoModel.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "clasificacion"', 'C:\\xampp\\htdocs\\BibliotecaJardin\\app\\Models\\FichaMovimientoModel.php', 41)
+ 2 APPPATH\Controllers\Biblioteca.php(60): App\Models\FichaMovimientoModel->registrarFichaCompleta([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Biblioteca->guardar_ficha()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Biblioteca))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+DEBUG - 2026-05-27 12:53:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:53:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:54:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:54:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:54:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-05-27 12:54:58 --> mysqli_sql_exception: Unknown column 'l.titulo' in 'field list' in C:\xampp\htdocs\BibliotecaJardin\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\BibliotecaJardin\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `f`.`id_...', 0)
+#1 C:\xampp\htdocs\BibliotecaJardin\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `f`.`id_...')
+#2 C:\xampp\htdocs\BibliotecaJardin\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `f`.`id_...')
+#3 C:\xampp\htdocs\BibliotecaJardin\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `f`.`id_...', Array, false)
+#4 C:\xampp\htdocs\BibliotecaJardin\app\Models\FichaMovimientoModel.php(116): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\BibliotecaJardin\app\Controllers\Admin.php(16): App\Models\FichaMovimientoModel->obtenerFichasPendientes()
+#6 C:\xampp\htdocs\BibliotecaJardin\system\CodeIgniter.php(933): App\Controllers\Admin->index()
+#7 C:\xampp\htdocs\BibliotecaJardin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\BibliotecaJardin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\BibliotecaJardin\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\BibliotecaJardin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\BibliotecaJardin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\BibliotecaJardin\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-05-27 12:54:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'l.titulo' in 'field list'
+[Method: GET, Route: admin]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `f`.`id_ficha`, `f`.`fecha_solicitud`, `l`.`titulo`, `l`.`autor`, `l`.`volumen`, `l`.`clasificacion_lomo`, `l`.`folio_adquisicion`, `lec`.`nombre_completo`, `lec`.`tipo_lector`, GROUP_CONCAT(t.etiqueta SEPARATOR ", ") as tematicas
+FROM `fichas_movimiento` `f`
+JOIN `lectores` `lec` ON `lec`.`id_lector` = `f`.`id_lector`
+LEFT JOIN `tematicas_sugeridas` `t` ON `t`.`id_ficha` = `f`.`id_ficha`
+WHERE `f`.`procesada_admin` = :f.procesada_admin:
+GROUP BY `f`.`id_ficha`
+ORDER BY `f`.`fecha_solicitud` DESC', [...], false)
+ 2 APPPATH\Models\FichaMovimientoModel.php(116): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(16): App\Models\FichaMovimientoModel->obtenerFichasPendientes()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+CRITICAL - 2026-05-27 12:54:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'l.titulo' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `f`.`id_ficha`, `f`.`fecha_solicitud`, `l`.`titulo`, `l`.`autor`, `l`.`volumen`, `l`.`clasificacion_lomo`, `l`.`folio_adquisicion`, `lec`.`nombre_completo`, `lec`.`tipo_lector`, GROUP_CONCAT(t.etiqueta SEPARATOR ", ") as tematicas
+FROM `fichas_movimiento` `f`
+JOIN `lectores` `lec` ON `lec`.`id_lector` = `f`.`id_lector`
+LEFT JOIN `tematicas_sugeridas` `t` ON `t`.`id_ficha` = `f`.`id_ficha`
+WHERE `f`.`procesada_admin` = 0
+GROUP BY `f`.`id_ficha`
+ORDER BY `f`.`fecha_solicitud` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `f`.`id_ficha`, `f`.`fecha_solicitud`, `l`.`titulo`, `l`.`autor`, `l`.`volumen`, `l`.`clasificacion_lomo`, `l`.`folio_adquisicion`, `lec`.`nombre_completo`, `lec`.`tipo_lector`, GROUP_CONCAT(t.etiqueta SEPARATOR ", ") as tematicas
+FROM `fichas_movimiento` `f`
+JOIN `lectores` `lec` ON `lec`.`id_lector` = `f`.`id_lector`
+LEFT JOIN `tematicas_sugeridas` `t` ON `t`.`id_ficha` = `f`.`id_ficha`
+WHERE `f`.`procesada_admin` = 0
+GROUP BY `f`.`id_ficha`
+ORDER BY `f`.`fecha_solicitud` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `f`.`id_ficha`, `f`.`fecha_solicitud`, `l`.`titulo`, `l`.`autor`, `l`.`volumen`, `l`.`clasificacion_lomo`, `l`.`folio_adquisicion`, `lec`.`nombre_completo`, `lec`.`tipo_lector`, GROUP_CONCAT(t.etiqueta SEPARATOR ", ") as tematicas
+FROM `fichas_movimiento` `f`
+JOIN `lectores` `lec` ON `lec`.`id_lector` = `f`.`id_lector`
+LEFT JOIN `tematicas_sugeridas` `t` ON `t`.`id_ficha` = `f`.`id_ficha`
+WHERE `f`.`procesada_admin` = :f.procesada_admin:
+GROUP BY `f`.`id_ficha`
+ORDER BY `f`.`fecha_solicitud` DESC', [...], false)
+ 4 APPPATH\Models\FichaMovimientoModel.php(116): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin.php(16): App\Models\FichaMovimientoModel->obtenerFichasPendientes()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+CRITICAL - 2026-05-27 12:54:58 --> [Caused by] mysqli_sql_exception: Unknown column 'l.titulo' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `f`.`id_ficha`, `f`.`fecha_solicitud`, `l`.`titulo`, `l`.`autor`, `l`.`volumen`, `l`.`clasificacion_lomo`, `l`.`folio_adquisicion`, `lec`.`nombre_completo`, `lec`.`tipo_lector`, GROUP_CONCAT(t.etiqueta SEPARATOR ", ") as tematicas
+FROM `fichas_movimiento` `f`
+JOIN `lectores` `lec` ON `lec`.`id_lector` = `f`.`id_lector`
+LEFT JOIN `tematicas_sugeridas` `t` ON `t`.`id_ficha` = `f`.`id_ficha`
+WHERE `f`.`procesada_admin` = 0
+GROUP BY `f`.`id_ficha`
+ORDER BY `f`.`fecha_solicitud` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `f`.`id_ficha`, `f`.`fecha_solicitud`, `l`.`titulo`, `l`.`autor`, `l`.`volumen`, `l`.`clasificacion_lomo`, `l`.`folio_adquisicion`, `lec`.`nombre_completo`, `lec`.`tipo_lector`, GROUP_CONCAT(t.etiqueta SEPARATOR ", ") as tematicas
+FROM `fichas_movimiento` `f`
+JOIN `lectores` `lec` ON `lec`.`id_lector` = `f`.`id_lector`
+LEFT JOIN `tematicas_sugeridas` `t` ON `t`.`id_ficha` = `f`.`id_ficha`
+WHERE `f`.`procesada_admin` = 0
+GROUP BY `f`.`id_ficha`
+ORDER BY `f`.`fecha_solicitud` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `f`.`id_ficha`, `f`.`fecha_solicitud`, `l`.`titulo`, `l`.`autor`, `l`.`volumen`, `l`.`clasificacion_lomo`, `l`.`folio_adquisicion`, `lec`.`nombre_completo`, `lec`.`tipo_lector`, GROUP_CONCAT(t.etiqueta SEPARATOR ", ") as tematicas
+FROM `fichas_movimiento` `f`
+JOIN `lectores` `lec` ON `lec`.`id_lector` = `f`.`id_lector`
+LEFT JOIN `tematicas_sugeridas` `t` ON `t`.`id_ficha` = `f`.`id_ficha`
+WHERE `f`.`procesada_admin` = 0
+GROUP BY `f`.`id_ficha`
+ORDER BY `f`.`fecha_solicitud` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `f`.`id_ficha`, `f`.`fecha_solicitud`, `l`.`titulo`, `l`.`autor`, `l`.`volumen`, `l`.`clasificacion_lomo`, `l`.`folio_adquisicion`, `lec`.`nombre_completo`, `lec`.`tipo_lector`, GROUP_CONCAT(t.etiqueta SEPARATOR ", ") as tematicas
+FROM `fichas_movimiento` `f`
+JOIN `lectores` `lec` ON `lec`.`id_lector` = `f`.`id_lector`
+LEFT JOIN `tematicas_sugeridas` `t` ON `t`.`id_ficha` = `f`.`id_ficha`
+WHERE `f`.`procesada_admin` = :f.procesada_admin:
+GROUP BY `f`.`id_ficha`
+ORDER BY `f`.`fecha_solicitud` DESC', [...], false)
+ 5 APPPATH\Models\FichaMovimientoModel.php(116): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin.php(16): App\Models\FichaMovimientoModel->obtenerFichasPendientes()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+DEBUG - 2026-05-27 12:57:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:57:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 12:58:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:07:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:07:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:07:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:07:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:08:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:08:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:08:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:09:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:13:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:13:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:13:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:13:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:13:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:13:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:15:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:15:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:38:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:41:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:42:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-27 13:42:16 --> BadMethodCallException: Call to undefined method App\Models\FichaMovimientoModel::obtenerOcrearUbicacion
+[Method: POST, Route: procesar_ficha]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Models\FichaMovimientoModel.php(134): CodeIgniter\Model->__call('obtenerOcrearUbicacion', [...])
+ 2 APPPATH\Controllers\Admin.php(62): App\Models\FichaMovimientoModel->procesarFichaAdmin([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->procesar_ficha()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+DEBUG - 2026-05-27 13:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-27 13:42:25 --> BadMethodCallException: Call to undefined method App\Models\FichaMovimientoModel::obtenerOcrearUbicacion
+[Method: POST, Route: procesar_ficha]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Models\FichaMovimientoModel.php(134): CodeIgniter\Model->__call('obtenerOcrearUbicacion', [...])
+ 2 APPPATH\Controllers\Admin.php(62): App\Models\FichaMovimientoModel->procesarFichaAdmin([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->procesar_ficha()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+DEBUG - 2026-05-27 13:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-27 13:42:39 --> BadMethodCallException: Call to undefined method App\Models\FichaMovimientoModel::obtenerOcrearUbicacion
+[Method: POST, Route: procesar_ficha]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Models\FichaMovimientoModel.php(134): CodeIgniter\Model->__call('obtenerOcrearUbicacion', [...])
+ 2 APPPATH\Controllers\Admin.php(62): App\Models\FichaMovimientoModel->procesarFichaAdmin([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->procesar_ficha()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+DEBUG - 2026-05-27 13:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:51:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-05-27 13:51:30 --> mysqli_sql_exception: Unknown column 'librero' in 'where clause' in C:\xampp\htdocs\BibliotecaJardin\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\BibliotecaJardin\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\BibliotecaJardin\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\BibliotecaJardin\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\BibliotecaJardin\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\BibliotecaJardin\app\Models\FichaMovimientoModel.php(294): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\BibliotecaJardin\app\Models\FichaMovimientoModel.php(134): App\Models\FichaMovimientoModel->obtenerOcrearUbicacion('D', '2')
+#6 C:\xampp\htdocs\BibliotecaJardin\app\Controllers\Admin.php(62): App\Models\FichaMovimientoModel->procesarFichaAdmin(Array)
+#7 C:\xampp\htdocs\BibliotecaJardin\system\CodeIgniter.php(933): App\Controllers\Admin->procesar_ficha()
+#8 C:\xampp\htdocs\BibliotecaJardin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\xampp\htdocs\BibliotecaJardin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\BibliotecaJardin\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\BibliotecaJardin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\BibliotecaJardin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\BibliotecaJardin\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2026-05-27 13:51:30 --> Error: Call to a member function getRowArray() on bool
+[Method: POST, Route: procesar_ficha]
+in APPPATH\Models\FichaMovimientoModel.php on line 294.
+ 1 APPPATH\Models\FichaMovimientoModel.php(134): App\Models\FichaMovimientoModel->obtenerOcrearUbicacion('D', '2')
+ 2 APPPATH\Controllers\Admin.php(62): App\Models\FichaMovimientoModel->procesarFichaAdmin([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->procesar_ficha()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+DEBUG - 2026-05-27 13:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-05-27 13:51:40 --> mysqli_sql_exception: Unknown column 'librero' in 'where clause' in C:\xampp\htdocs\BibliotecaJardin\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\BibliotecaJardin\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\BibliotecaJardin\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\BibliotecaJardin\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\BibliotecaJardin\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\BibliotecaJardin\app\Models\FichaMovimientoModel.php(294): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\BibliotecaJardin\app\Models\FichaMovimientoModel.php(134): App\Models\FichaMovimientoModel->obtenerOcrearUbicacion('D', '2')
+#6 C:\xampp\htdocs\BibliotecaJardin\app\Controllers\Admin.php(62): App\Models\FichaMovimientoModel->procesarFichaAdmin(Array)
+#7 C:\xampp\htdocs\BibliotecaJardin\system\CodeIgniter.php(933): App\Controllers\Admin->procesar_ficha()
+#8 C:\xampp\htdocs\BibliotecaJardin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\xampp\htdocs\BibliotecaJardin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\BibliotecaJardin\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\BibliotecaJardin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\BibliotecaJardin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\BibliotecaJardin\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2026-05-27 13:51:40 --> Error: Call to a member function getRowArray() on bool
+[Method: POST, Route: procesar_ficha]
+in APPPATH\Models\FichaMovimientoModel.php on line 294.
+ 1 APPPATH\Models\FichaMovimientoModel.php(134): App\Models\FichaMovimientoModel->obtenerOcrearUbicacion('D', '2')
+ 2 APPPATH\Controllers\Admin.php(62): App\Models\FichaMovimientoModel->procesarFichaAdmin([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->procesar_ficha()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\BibliotecaJardin\\public\\index.php')
+DEBUG - 2026-05-27 13:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:56:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:56:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:56:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:56:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:56:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-27 13:56:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

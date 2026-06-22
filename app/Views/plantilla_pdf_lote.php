@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Impresión de Fichas</title>
+    <style>
+        /* Redujimos el margen general de la hoja */
+        body { 
+            font-family: Arial, Helvetica, sans-serif; 
+            font-size: 12px; /* Letra un punto más pequeña */
+            color: #000; 
+            margin: 0;
+            padding: 5px; 
+        }
+
+        /* Envoltura de la ficha: Ajustamos márgenes para que quepan 2 exactas */
+        .ficha-wrapper {
+            page-break-inside: avoid; 
+            margin-bottom: 15px; /* Menos espacio entre fichas */
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #999; /* Línea de recorte más sutil */
+            height: 45%; /* Forzamos a que tome poco menos de media hoja */
+        }
+
+        .ficha-container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* Encabezados más compactos */
+        .header { text-align: center; margin-bottom: 5px; line-height: 1.2; }
+        .header h1 { margin: 0; font-size: 14px; font-weight: normal; }
+        .header h2 { margin: 0; font-size: 13px; font-weight: normal; }
+        .header h3 { margin: 0; font-size: 12px; font-weight: normal; }
+        
+        /* Títulos de sección con menos margen arriba y abajo */
+        .section-title { 
+            background-color: #000; 
+            color: #fff; 
+            text-align: center; 
+            font-weight: bold; 
+            padding: 2px 0; 
+            margin: 8px 0; 
+            font-size: 12px; 
+            letter-spacing: 1px; 
+        }
+        
+        /* Tablas más apretadas */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 2px; }
+        td { padding: 3px 0; vertical-align: bottom; }
+        .label { font-weight: bold; white-space: nowrap; width: 1%; padding-right: 5px; font-size: 11px;}
+        .data-line { border-bottom: 1px solid #000; width: 99%; font-family: 'Courier New', Courier, monospace; font-size: 12px; padding-left: 5px; }
+        
+        /* Pie de página compacto */
+        .footer { text-align: center; margin-top: 10px; font-size: 9px; border-top: 1px solid #000; padding-top: 3px; }
+        .footer strong { display: block; margin-bottom: 1px; font-size: 10px; }
+        
+        /* Redujimos el tamaño del círculo del sello de 100px a 70px */
+        .sello-area { margin-top: 10px; text-align: center; }
+        .caja-sello { width: 70px; height: 70px; border: 1px dashed #999; margin: 0 auto; border-radius: 50%; display: table; }
+        .texto-sello { display: table-cell; vertical-align: middle; color: #999; font-size: 8px; font-weight: bold; text-transform: uppercase; }
+        
+        .folio-pequeno { text-align: right; font-size: 9px; color: #666; margin-bottom: -15px;}
+    </style>
+</head>
+<body>
+
+    <!-- Iteramos sobre todas las fichas seleccionadas -->
+    <?php foreach($fichas as $ficha): ?>
+    <div class="ficha-wrapper">
+        <div class="ficha-container">
+            
+            <div class="folio-pequeno">Folio: #<?= str_pad($ficha['id_ficha'], 5, '0', STR_PAD_LEFT) ?></div>
+
+            <div class="header">
+                <h1>JARDÍN ETNOBIOLÓGICO DE OAXACA</h1>
+                <h2>BIBLIOTECA</h2>
+                <h3>FICHA DE PRÉSTAMO INTERNO</h3>
+            </div>
+
+            <div class="section-title">LIBRO</div>
+            <table><tr><td class="label">CLASIFICACIÓN:</td><td class="data-line"><?= esc($ficha['clasificacion_lomo']) ?></td></tr></table>
+            <table><tr><td class="label">TÍTULO:</td><td class="data-line"><?= esc($ficha['titulo']) ?></td></tr></table>
+            <table><tr><td class="label">AUTOR (S):</td><td class="data-line"><?= esc($ficha['autor']) ?></td></tr></table>
+            <table>
+                <tr>
+                    <td class="label">VOL:</td><td class="data-line" style="width: 30%;"><?= esc($ficha['volumen']) ?: 'N/A' ?></td>
+                    <td class="label" style="padding-left: 10px;">AÑO:</td><td class="data-line"><?= esc($ficha['anio_publicacion']) ?: 'N/A' ?></td>
+                </tr>
+            </table>
+
+            <div class="section-title">DATOS DEL LECTOR</div>
+            <table><tr><td class="label">NOMBRE:</td><td class="data-line"><?= esc($ficha['nombre_completo']) ?></td></tr></table>
+            <table>
+                <tr>
+                    <td class="label">PAÍS:</td><td class="data-line" style="width: 40%;"><?= esc($ficha['pais']) ?></td>
+                    <td class="label" style="padding-left: 10px;">ESTADO:</td><td class="data-line"><?= esc($ficha['estado_lector']) ?></td>
+                </tr>
+            </table>
+            <table><tr><td class="label">OCUPACIÓN:</td><td class="data-line"><?= esc($ficha['ocupacion']) ?: 'N/A' ?></td></tr></table>
+            <table><tr><td class="label">INSTITUCIÓN:</td><td class="data-line"><?= esc($ficha['institucion']) ?: 'N/A' ?></td></tr></table>
+            <table><tr><td class="label">FECHA:</td><td class="data-line"><?= date('d / m / Y', strtotime($ficha['fecha_solicitud'])) ?></td></tr></table>
+
+            <!-- El sello ahora ocupa mucho menos espacio vertical -->
+            <div class="sello-area">
+                <div class="caja-sello">
+                    <div class="texto-sello"><p style="margin:2px 0;">SELLO</p></div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <strong>AVISO DE PRIVACIDAD</strong>
+                LOS DATOS RECABADOS SON CON FINES ESTADÍSTICOS ÚNICAMENTE.
+            </div>
+
+        </div>
+    </div>
+    <?php endforeach; ?>
+
+</body>
+</html>
