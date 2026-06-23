@@ -257,7 +257,7 @@ class FichaMovimientoModel extends Model
     /**
      * Obtiene el historial de fichas completadas con Paginación.
      */
-    public function obtenerFichasCompletadasPaginadas($fechaInicio = null, $fechaFin = null, $porPagina = 20)
+public function obtenerFichasCompletadasPaginadas($fechaInicio = null, $fechaFin = null, $porPagina = 20, $orden = 'ASC')
     {
         // Al usar $this->select en lugar de $this->db->table, activamos la paginación nativa del Modelo
         $this->select('fichas_movimiento.id_ficha, fichas_movimiento.fecha_solicitud, fichas_movimiento.fecha_devolucion_real, libros.titulo, libros.clasificacion_lomo, lectores.nombre_completo');
@@ -270,10 +270,14 @@ class FichaMovimientoModel extends Model
         if ($fechaInicio && $fechaFin) {
             $this->where('fichas_movimiento.fecha_solicitud >=', $fechaInicio . ' 00:00:00');
             $this->where('fichas_movimiento.fecha_solicitud <=', $fechaFin . ' 23:59:59');
-        }
+        } 
 
+        // Aplicamos el ordenamiento dinámico que viene de la vista
+        $this->orderBy('fichas_movimiento.id_ficha', $orden);
+
+        // Orden secundario como desempate
         $this->orderBy('fichas_movimiento.fecha_devolucion_real', 'DESC');
-        
+       
         // paginate() hace la magia: divide los resultados y prepara los botones
         return $this->paginate($porPagina);
     }

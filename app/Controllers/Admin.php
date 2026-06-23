@@ -75,17 +75,22 @@ public function completadas()
         
         $fechaInicio = $this->request->getGet('fecha_inicio');
         $fechaFin    = $this->request->getGet('fecha_fin');
+        
+        // Atrapamos el parámetro de orden, si no existe o es inválido, por defecto será ASC
+        $orden = $this->request->getGet('orden');
+        if ($orden !== 'DESC') {
+            $orden = 'ASC';
+        }
 
         $data = [
-            // Llamamos a la nueva función paginada (ej. 20 registros por página)
-            'fichas_completadas' => $fichaModel->obtenerFichasCompletadasPaginadas($fechaInicio, $fechaFin, 20),
-            // Obtenemos los botones generados por CodeIgniter
+            // Pasamos la nueva variable $orden a la función
+            'fichas_completadas' => $fichaModel->obtenerFichasCompletadasPaginadas($fechaInicio, $fechaFin, 20, $orden),
             'pager'              => $fichaModel->pager,
             'fecha_inicio'       => $fechaInicio,
-            'fecha_fin'          => $fechaFin
+            'fecha_fin'          => $fechaFin,
+            'orden'              => $orden // Lo pasamos a la vista para recordar qué opción seleccionó el usuario
         ];
-        
-             // Carga la vista del menú principal del administrador
+
         return view('header')
              . view('admin_completadas', $data)
              . view('footer');

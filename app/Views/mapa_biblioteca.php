@@ -243,18 +243,18 @@
 
     const MAPEO_LIBREROS = {
         // Pared Izquierda
-        "A": "IZQ-1",
-        "B": "IZQ-2",
-        "C": "IZQ-3",
-        "D": "IZQ-4",
-        "E": "IZQ-5",
-        "F": "IZQ-6",
-        "G": "IZQ-7",
-        "H": "IZQ-8",
-        "I": "IZQ-9",
-        "J": "IZQ-10",
-        "K": "IZQ-11",
-        "L": "IZQ-12",
+        "A": "IZQ-12",
+        "B": "IZQ-11",
+        "C": "IZQ-10",
+        "D": "IZQ-9",
+        "E": "IZQ-8",
+        "F": "IZQ-7",
+        "G": "IZQ-6",
+        "H": "IZQ-5",
+        "I": "IZQ-4",
+        "J": "IZQ-3",
+        "K": "IZQ-2",
+        "L": "IZQ-1",
 
         // Pared enfrente
         "M": "FR-1",
@@ -347,43 +347,94 @@
         }
     });
 
-    function iluminarLibrero(libro) {
+function iluminarLibrero(libro) {
         // 1. Apagar todos los libreros
         document.querySelectorAll('.librero').forEach(el => {
             el.classList.remove('highlight');
         });
+        
+        // 2. Limpiar cualquier indicador de número previo
+        document.querySelectorAll('.indicador-fila').forEach(el => el.remove());
 
-        const codigoDB = libro.codigo_librero;
-        let idSvg = MAPEO_LIBREROS[codigoDB];
+        // Convertir a texto para procesarlos
+        const val1 = libro.codigo_librero.toString().trim();
+        const val2 = libro.fila.toString().trim();
+        
+        // Detección inteligente: Averiguar cuál tiene la letra (A, B, AA...) y cuál el número (8, 1...)
+        // isNaN (Is Not a Number) devolverá true para las letras
+        let letraLibrero = isNaN(val1) ? val1 : val2;
+        let numeroColumna = isNaN(val1) ? val2 : val1;
 
-        // Intento de fallback: Si el código de la BD es exactamente igual a un data-librero
+        // Buscar el ID del SVG usando la letra en tu mapa (ej. MAPEO_LIBREROS["A"] -> "IZQ-1")
+        let idSvg = MAPEO_LIBREROS[letraLibrero];
+
         if (!idSvg) {
-            idSvg = codigoDB;
+            idSvg = letraLibrero; // Fallback por si la letra es directamente el ID
         }
 
-        // Buscar el elemento en el SVG
+        // Buscar el rectángulo correspondiente en el SVG
         const libreroMueble = document.querySelector(`[data-librero="${idSvg}"]`);
 
         if (libreroMueble) {
-            // Animación de iluminar
+            // Animación de iluminar el rectángulo
             libreroMueble.classList.add('highlight');
 
-            // Mostrar Info Card
+            // 3. Dibujar el número de columna dentro del SVG
+            const svgNS = "http://www.w3.org/2000/svg";
+            
+            // Leer coordenadas del librero
+            const x = parseFloat(libreroMueble.getAttribute('x'));
+            const y = parseFloat(libreroMueble.getAttribute('y'));
+            const w = parseFloat(libreroMueble.getAttribute('width'));
+            const h = parseFloat(libreroMueble.getAttribute('height'));
+            
+            // Calcular el centro
+            const cx = x + (w / 2);
+            const cy = y + (h / 2);
+            
+            // Crear elemento de texto
+            const textoNumero = document.createElementNS(svgNS, 'text');
+            textoNumero.setAttribute('x', cx);
+            textoNumero.setAttribute('y', cy);
+            textoNumero.setAttribute('class', 'texto-librero indicador-fila'); 
+            
+            // Alinear exactamente al centro del punto calculado
+            textoNumero.setAttribute('text-anchor', 'middle');
+            textoNumero.setAttribute('dominant-baseline', 'middle');
+            
+            // Estilos para que el número resalte sobre el color de "highlight"
+            textoNumero.style.fontSize = "18px"; 
+            textoNumero.style.fontWeight = "bold";
+            textoNumero.style.fill = "#ffffff"; 
+            textoNumero.style.pointerEvents = "none";
+            
+            // Insertar únicamente el número (Ej: "8")
+            textoNumero.textContent = numeroColumna; 
+            
+            // Agregar el texto al SVG
+            libreroMueble.parentNode.appendChild(textoNumero);
+
+            // 4. Mostrar Info Card (asegurándonos de mostrar los datos en orden correcto)
             document.getElementById('info-titulo').textContent = libro.titulo;
             document.getElementById('info-autor').textContent = libro.autor;
-            document.getElementById('info-librero').textContent = codigoDB;
-            document.getElementById('info-fila').textContent = libro.fila;
+            document.getElementById('info-librero').textContent = letraLibrero; 
+            document.getElementById('info-fila').textContent = numeroColumna; 
             infoCard.classList.remove('hidden');
         } else {
-            alert(`El libro está en el librero ${codigoDB} (Fila ${libro.fila}), pero aún no está mapeado en el dibujo SVG. Por favor actualiza la variable MAPEO_LIBREROS en el código.`);
+            alert(`El libro está en el Librero ${letraLibrero} (Columna/Fila ${numeroColumna}), pero el código '${idSvg}' no está dibujado en el SVG.`);
         }
     }
 
     function cerrarInfo() {
         infoCard.classList.add('hidden');
+        
         document.querySelectorAll('.librero').forEach(el => {
             el.classList.remove('highlight');
         });
+        
+        // [NUEVO] Eliminar el texto de la fila al cerrar la búsqueda
+        document.querySelectorAll('.indicador-fila').forEach(el => el.remove());
+        
         buscador.value = '';
     }
 

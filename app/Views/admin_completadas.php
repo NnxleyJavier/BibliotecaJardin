@@ -31,7 +31,7 @@
             <h3 class="text-lg font-bold text-gray-800 mb-4">Filtrar por rango de fechas</h3>
             
             <!-- Formulario GET para buscar -->
-            <form method="GET" action="<?= base_url('/completadas') ?>" class="flex gap-4 items-end">
+       <form method="GET" action="<?= base_url('/completadas') ?>" class="flex flex-wrap gap-4 items-end">
                 <div>
                     <label class="block text-sm font-medium text-gray-700">Fecha Inicio</label>
                     <input type="date" name="fecha_inicio" value="<?= isset($fecha_inicio) ? esc($fecha_inicio) : '' ?>" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border focus:outline-none focus:ring-2 focus-ring-jardin">
@@ -40,8 +40,17 @@
                     <label class="block text-sm font-medium text-gray-700">Fecha Fin</label>
                     <input type="date" name="fecha_fin" value="<?= isset($fecha_fin) ? esc($fecha_fin) : '' ?>" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border focus:outline-none focus:ring-2 focus-ring-jardin">
                 </div>
+                
                 <div>
-                    <button type="submit" class="bg-jardin hover:bg-green-800 text-white font-bold py-2 px-6 rounded shadow transition">Buscar</button>
+                    <label class="block text-sm font-medium text-gray-700">Orden de Fichas</label>
+                    <select name="orden" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm p-2 border focus:outline-none focus:ring-2 focus-ring-jardin bg-white">
+                        <option value="ASC" <?= (isset($orden) && $orden == 'ASC') ? 'selected' : '' ?>>Ascendente (1, 2, 3...)</option>
+                        <option value="DESC" <?= (isset($orden) && $orden == 'DESC') ? 'selected' : '' ?>>Descendente (9, 8, 7...)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <button type="submit" class="bg-jardin hover:bg-green-800 text-white font-bold py-2 px-6 rounded shadow transition">Aplicar</button>
                     <a href="<?= base_url('/completadas') ?>" class="ml-2 text-gray-500 hover:text-gray-800 text-sm font-semibold">Limpiar Filtro</a>
                 </div>
             </form>
