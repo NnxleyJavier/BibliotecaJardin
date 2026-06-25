@@ -23,186 +23,89 @@
         <!-- Contenedor del Mapa SVG -->
         <div class="min-w-[800px] flex justify-center">
 
-            <svg id="plano-biblioteca" viewBox="0 0 1000 800" class="w-full h-auto max-w-4xl" style="background-color: #f8fafc; border-radius: 8px;">
 
-                <!-- Definiciones -->
-                <defs>
-                    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-                        <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.1" />
-                    </filter>
+        <svg id="plano-biblioteca" viewBox="0 0 1000 1100" class="w-full h-auto max-w-4xl mx-auto" style="background-color: #f8fafc; border-radius: 8px;">
+    <defs>
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.1" />
+        </filter>
+        <style>
+            .librero { fill: #d4a373; stroke: #8b5a2b; stroke-width: 2; transition: all 0.3s ease; cursor: pointer; }
+            .librero:hover { fill: #faedcd; }
+            .librero.highlight { fill: #ef4444; stroke: #991b1b; animation: pulse 1.5s infinite; }
+            @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+            .pared { stroke: #94a3b8; stroke-width: 8; stroke-linecap: round; fill: none; }
+            .puerta { stroke: #cbd5e1; stroke-width: 6; stroke-dasharray: 10, 10; fill: none; }
+            .ventana { stroke: #38bdf8; stroke-width: 6; fill: none; }
+            .texto-muro { font-family: sans-serif; font-size: 14px; fill: #64748b; font-weight: bold; }
+        </style>
+    </defs>
 
-                    <style>
-                        .librero {
-                            fill: #d4a373;
-                            stroke: #8b5a2b;
-                            stroke-width: 2;
-                            transition: all 0.3s ease;
-                            cursor: pointer;
-                        }
+    <line x1="295" y1="100" x2="295" y2="560" class="pared" />
+    <line x1="295" y1="700" x2="295" y2="985" class="pared" />
+    <line x1="295" y1="560" x2="295" y2="700" class="puerta" />
+    <text x="270" y="630" class="texto-muro" transform="rotate(-90, 270, 630)">PUERTA</text>
 
-                        .librero:hover {
-                            fill: #faedcd;
-                        }
+    <line x1="295" y1="100" x2="711" y2="100" class="pared" /> <line x1="711" y1="100" x2="711" y2="985" class="pared" /> <line x1="295" y1="985" x2="711" y2="985" class="pared" /> <text x="250" y="330" class="texto-muro" transform="rotate(-90, 250, 330)">PARED IZQUIERDA</text>
+    <text x="503" y="80" class="texto-muro" text-anchor="middle">PARED DE ENFRENTE</text>
+    <text x="750" y="525" class="texto-muro" transform="rotate(90, 750, 525)">PARED DERECHA</text>
+    <text x="503" y="1025" class="texto-muro" text-anchor="middle">PARED DE ATRÁS</text>
 
-                        .librero.highlight {
-                            fill: #ef4444;
-                            stroke: #991b1b;
-                            animation: pulse 1.5s infinite;
-                        }
+    <g id="pared-izquierda-arriba">
+        <rect x="295" y="140" width="40" height="35" class="librero" data-librero="IZQ-1" /> <rect x="295" y="175" width="40" height="35" class="librero" data-librero="IZQ-2" /> <rect x="295" y="210" width="40" height="35" class="librero" data-librero="IZQ-3" /> <rect x="295" y="245" width="40" height="35" class="librero" data-librero="IZQ-4" /> <rect x="295" y="280" width="40" height="35" class="librero" data-librero="IZQ-5" /> <rect x="295" y="315" width="40" height="35" class="librero" data-librero="IZQ-6" /> <rect x="295" y="350" width="40" height="35" class="librero" data-librero="IZQ-7" /> <rect x="295" y="385" width="40" height="35" class="librero" data-librero="IZQ-8" /> <rect x="295" y="420" width="40" height="35" class="librero" data-librero="IZQ-9" /> <rect x="295" y="455" width="40" height="35" class="librero" data-librero="IZQ-10" /> <rect x="295" y="490" width="40" height="35" class="librero" data-librero="IZQ-11" /> <rect x="295" y="525" width="40" height="35" class="librero" data-librero="IZQ-12" /> </g>
 
-                        @keyframes pulse {
-                            0% {
-                                transform: scale(1);
-                            }
+    <g id="pared-izquierda-abajo">
+        <rect x="295" y="700" width="40" height="35" class="librero" data-librero="P-BD" />
+        <rect x="295" y="735" width="40" height="35" class="librero" data-librero="P-BC" />
+        <rect x="295" y="770" width="40" height="35" class="librero" data-librero="P-BB" />
+        <rect x="295" y="805" width="40" height="35" class="librero" data-librero="P-BA" />
+        
+        <line x1="295" y1="840" x2="295" y2="910" class="ventana" />
+        <rect x="295" y="840" width="20" height="35" class="librero" data-librero="P-AZ" />
+        <rect x="295" y="875" width="20" height="35" class="librero" data-librero="P-AY" />
+        
+        <rect x="295" y="910" width="40" height="35" class="librero" data-librero="P-AX" />
+    </g>
 
-                            50% {
-                                transform: scale(1.02);
-                            }
+    <g id="pared-frontal">
+        <rect x="335" y="100" width="42" height="40" class="librero" data-librero="FR-1" /> <rect x="377" y="100" width="42" height="40" class="librero" data-librero="FR-2" /> <rect x="419" y="100" width="42" height="40" class="librero" data-librero="FR-3" /> <rect x="461" y="100" width="42" height="40" class="librero" data-librero="FR-4" /> <rect x="503" y="100" width="42" height="40" class="librero" data-librero="FR-5" /> <rect x="545" y="100" width="42" height="40" class="librero" data-librero="FR-6" /> <rect x="587" y="100" width="42" height="40" class="librero" data-librero="FR-7" /> <rect x="629" y="100" width="42" height="40" class="librero" data-librero="FR-8" /> </g>
 
-                            100% {
-                                transform: scale(1);
-                            }
-                        }
+    <g id="pared-atras">
+        <rect x="623" y="945" width="48" height="40" class="librero" data-librero="P-AQ" />
+        <rect x="575" y="945" width="48" height="40" class="librero" data-librero="P-AR" />
+        <rect x="527" y="945" width="48" height="40" class="librero" data-librero="P-AS" />
+        <rect x="479" y="945" width="48" height="40" class="librero" data-librero="P-AT" />
+        <rect x="431" y="945" width="48" height="40" class="librero" data-librero="P-AU" />
+        <rect x="383" y="945" width="48" height="40" class="librero" data-librero="P-AV" />
+        <rect x="335" y="945" width="48" height="40" class="librero" data-librero="P-AW" />
+    </g>
 
-                        .pared {
-                            stroke: #94a3b8;
-                            stroke-width: 8;
-                            stroke-linecap: round;
-                            fill: none;
-                        }
+    <g id="pared-derecha">
+        <rect x="671" y="140" width="40" height="35" class="librero" data-librero="DER-1" /> <rect x="671" y="175" width="40" height="35" class="librero" data-librero="DER-2" /> <rect x="671" y="210" width="40" height="35" class="librero" data-librero="DER-3" /> <rect x="671" y="245" width="40" height="35" class="librero" data-librero="DER-4" /> <rect x="671" y="280" width="40" height="35" class="librero" data-librero="DER-5" /> <rect x="671" y="315" width="40" height="35" class="librero" data-librero="DER-6" /> <rect x="671" y="350" width="40" height="35" class="librero" data-librero="DER-7" /> <rect x="671" y="385" width="40" height="35" class="librero" data-librero="DER-8" /> <rect x="671" y="420" width="40" height="35" class="librero" data-librero="DER-9" /> <rect x="671" y="455" width="40" height="35" class="librero" data-librero="DER-10" /> <rect x="671" y="490" width="40" height="35" class="librero" data-librero="DER-11" /> <rect x="671" y="525" width="40" height="35" class="librero" data-librero="DER-12" /> <rect x="671" y="560" width="40" height="35" class="librero" data-librero="DER-13" /> <rect x="671" y="595" width="40" height="35" class="librero" data-librero="DER-14" /> <line x1="711" y1="630" x2="711" y2="700" class="ventana" />
+        <rect x="691" y="630" width="20" height="35" class="librero" data-librero="P-AI" />
+        <rect x="691" y="665" width="20" height="35" class="librero" data-librero="P-AJ" />
+        
+        <rect x="671" y="700" width="40" height="35" class="librero" data-librero="P-AK" />
+        <rect x="671" y="735" width="40" height="35" class="librero" data-librero="P-AL" />
+        <rect x="671" y="770" width="40" height="35" class="librero" data-librero="P-AM" />
+        <rect x="671" y="805" width="40" height="35" class="librero" data-librero="P-AN" />
+        
+        <line x1="711" y1="840" x2="711" y2="910" class="ventana" />
+        <rect x="691" y="840" width="20" height="35" class="librero" data-librero="P-AÑ" />
+        <rect x="691" y="875" width="20" height="35" class="librero" data-librero="P-AO" />
+        
+        <rect x="671" y="910" width="40" height="35" class="librero" data-librero="P-AP" />
+    </g>
 
-                        .puerta {
-                            stroke: #cbd5e1;
-                            stroke-width: 6;
-                            stroke-dasharray: 10, 10;
-                            fill: none;
-                        }
+    <g id="mesas" filter="url(#shadow)">
+        <rect x="390" y="180" width="220" height="130" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" />
+        <rect x="390" y="340" width="220" height="130" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" />
+    </g>
+    <text x="500" y="245" class="texto-muro" text-anchor="middle">Mesa Lectura</text>
+    <text x="500" y="405" class="texto-muro" text-anchor="middle">Mesa Lectura</text>
+</svg>
 
-                        .ventana {
-                            stroke: #38bdf8;
-                            stroke-width: 6;
-                            fill: none;
-                        }
 
-                        .texto-muro {
-                            font-family: sans-serif;
-                            font-size: 14px;
-                            fill: #64748b;
-                            font-weight: bold;
-                        }
-
-                        .texto-librero {
-                            font-family: sans-serif;
-                            font-size: 10px;
-                            fill: #fff;
-                            font-weight: bold;
-                            pointer-events: none;
-                            text-anchor: middle;
-                            dominant-baseline: middle;
-                        }
-                    </style>
-                </defs>
-
-                <!-- Muros perimetrales (Forma de U más cerrada) -->
-                <!-- Pared Izquierda -->
-                <line x1="100" y1="100" x2="100" y2="700" class="pared" />
-                <!-- Pared Frontal (Arriba) -->
-                <line x1="100" y1="100" x2="550" y2="100" class="pared" />
-                <!-- Pared Derecha -->
-                <line x1="550" y1="100" x2="550" y2="700" class="pared" />
-
-                <text x="50" y="400" class="texto-muro" transform="rotate(-90, 50, 400)">PARED IZQUIERDA</text>
-                <text x="325" y="70" class="texto-muro" text-anchor="middle">MURO DE ENFRENTE</text>
-                <text x="600" y="400" class="texto-muro" transform="rotate(90, 600, 400)">PARED DERECHA</text>
-
-                <!-- =============================== -->
-                <!-- PARED IZQUIERDA (x: 105, y: 120 -> 680) -->
-                <!-- =============================== -->
-                <g id="pared-izquierda">
-                    <!-- 2 grandes con 8 -->
-                    <rect x="105" y="120" width="45" height="35" class="librero" data-librero="IZQ-1" filter="url(#shadow)" />
-                    <rect x="105" y="160" width="45" height="35" class="librero" data-librero="IZQ-2" filter="url(#shadow)" />
-
-                    <!-- 2 chicos con 4 -->
-                    <line x1="100" y1="200" x2="100" y2="270" class="ventana" /> <!-- Ventana -->
-                    <rect x="105" y="200" width="30" height="35" class="librero" data-librero="IZQ-3" filter="url(#shadow)" />
-                    <rect x="105" y="240" width="30" height="35" class="librero" data-librero="IZQ-4" filter="url(#shadow)" />
-
-                    <!-- 4 grandes con 8 -->
-                    <rect x="105" y="280" width="45" height="35" class="librero" data-librero="IZQ-5" filter="url(#shadow)" />
-                    <rect x="105" y="320" width="45" height="35" class="librero" data-librero="IZQ-6" filter="url(#shadow)" />
-                    <rect x="105" y="360" width="45" height="35" class="librero" data-librero="IZQ-7" filter="url(#shadow)" />
-                    <rect x="105" y="400" width="45" height="35" class="librero" data-librero="IZQ-8" filter="url(#shadow)" />
-
-                    <!-- 2 chicos con 2 -->
-                    <rect x="105" y="440" width="20" height="35" class="librero" data-librero="IZQ-9" filter="url(#shadow)" />
-                    <rect x="105" y="480" width="20" height="35" class="librero" data-librero="IZQ-10" filter="url(#shadow)" />
-
-                    <!-- 2 grandes con 8 -->
-                    <rect x="105" y="520" width="45" height="35" class="librero" data-librero="IZQ-11" filter="url(#shadow)" />
-                    <rect x="105" y="560" width="45" height="35" class="librero" data-librero="IZQ-12" filter="url(#shadow)" />
-                </g>
-
-                <!-- =============================== -->
-                <!-- MURO DE ENFRENTE (x: 120 -> 510) -->
-                <!-- =============================== -->
-                <g id="muro-enfrente">
-                    <!-- 3 grandes con 8 -->
-                    <rect x="150" y="105" width="40" height="45" class="librero" data-librero="FR-1" filter="url(#shadow)" />
-                    <rect x="195" y="105" width="40" height="45" class="librero" data-librero="FR-2" filter="url(#shadow)" />
-                    <rect x="240" y="105" width="40" height="45" class="librero" data-librero="FR-3" filter="url(#shadow)" />
-
-                    <!-- 2 chicos con 2 (sobre puerta) -->
-                    <line x1="285" y1="100" x2="375" y2="100" class="puerta" />
-                    <rect x="285" y="105" width="40" height="20" class="librero" data-librero="FR-4" filter="url(#shadow)" />
-                    <rect x="330" y="105" width="40" height="20" class="librero" data-librero="FR-5" filter="url(#shadow)" />
-
-                    <!-- 3 grandes con 8 -->
-                    <rect x="375" y="105" width="40" height="45" class="librero" data-librero="FR-6" filter="url(#shadow)" />
-                    <rect x="420" y="105" width="40" height="45" class="librero" data-librero="FR-7" filter="url(#shadow)" />
-                    <rect x="465" y="105" width="40" height="45" class="librero" data-librero="FR-8" filter="url(#shadow)" />
-
-                </g>
-
-                <!-- =============================== -->
-                <!-- PARED DERECHA (desplazada a X=550) -->
-                <!-- =============================== -->
-                <g id="pared-derecha">
-                    <!-- 2 grandes con 8 (al inicio) -->
-                    <rect x="505" y="120" width="45" height="35" class="librero" data-librero="DER-1" filter="url(#shadow)" />
-                    <rect x="505" y="160" width="45" height="35" class="librero" data-librero="DER-2" filter="url(#shadow)" />
-
-                    <!-- 2 chicos con 4 (bajo ventana) -->
-                    <line x1="550" y1="200" x2="550" y2="270" class="ventana" />
-                    <rect x="520" y="200" width="30" height="35" class="librero" data-librero="DER-3" filter="url(#shadow)" />
-                    <rect x="520" y="240" width="30" height="35" class="librero" data-librero="DER-4" filter="url(#shadow)" />
-
-                    <!-- 4 grandes con 8 -->
-                    <rect x="505" y="280" width="45" height="35" class="librero" data-librero="DER-5" filter="url(#shadow)" />
-                    <rect x="505" y="320" width="45" height="35" class="librero" data-librero="DER-6" filter="url(#shadow)" />
-                    <rect x="505" y="360" width="45" height="35" class="librero" data-librero="DER-7" filter="url(#shadow)" />
-                    <rect x="505" y="400" width="45" height="35" class="librero" data-librero="DER-8" filter="url(#shadow)" />
-
-                    <!-- 2 chicos con 4 (bajo ventana) -->
-                    <line x1="550" y1="440" x2="550" y2="510" class="ventana" />
-                    <rect x="520" y="440" width="30" height="35" class="librero" data-librero="DER-9" filter="url(#shadow)" />
-                    <rect x="520" y="480" width="30" height="35" class="librero" data-librero="DER-10" filter="url(#shadow)" />
-
-                    <!-- 4 grandes con 8 -->
-                    <rect x="505" y="520" width="45" height="35" class="librero" data-librero="DER-11" filter="url(#shadow)" />
-                    <rect x="505" y="560" width="45" height="35" class="librero" data-librero="DER-12" filter="url(#shadow)" />
-                    <rect x="505" y="600" width="45" height="35" class="librero" data-librero="DER-13" filter="url(#shadow)" />
-                    <rect x="505" y="640" width="45" height="35" class="librero" data-librero="DER-14" filter="url(#shadow)" />
-                </g>
-
-                <!-- Mesas de lectura en el centro -->
-                <rect x="250" y="250" width="80" height="150" rx="10" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" />
-                <rect x="250" y="450" width="80" height="150" rx="10" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" />
-
-                <text x="290" y="325" class="texto-muro" text-anchor="middle" transform="rotate(-90, 290, 325)">Mesa Lectura</text>
-                <text x="290" y="525" class="texto-muro" text-anchor="middle" transform="rotate(-90, 290, 525)">Mesa Lectura</text>
-
-            </svg>
         </div>
 
         <!-- Tarjeta de Información flotante -->
@@ -240,50 +143,32 @@
 
     // Aquí debes completar tu propio mapeo conectando la DB con el SVG:
     // "CODIGO_BD": "ID_SVG"
+const MAPEO_LIBREROS = {
+    // --- PARED IZQUIERDA (Mitad Superior) ---
+    "A": "IZQ-12", "B": "IZQ-11", "C": "IZQ-10", "D": "IZQ-9",
+    "E": "IZQ-8", "F": "IZQ-7", "G": "IZQ-6", "H": "IZQ-5",
+    "I": "IZQ-4", "J": "IZQ-3", "K": "IZQ-2", "L": "IZQ-1",
 
-    const MAPEO_LIBREROS = {
-        // Pared Izquierda
-        "A": "IZQ-12",
-        "B": "IZQ-11",
-        "C": "IZQ-10",
-        "D": "IZQ-9",
-        "E": "IZQ-8",
-        "F": "IZQ-7",
-        "G": "IZQ-6",
-        "H": "IZQ-5",
-        "I": "IZQ-4",
-        "J": "IZQ-3",
-        "K": "IZQ-2",
-        "L": "IZQ-1",
+    // --- PARED DE ENFRENTE ---
+    "M": "FR-1", "N": "FR-2", "O": "FR-3", "P": "FR-4", 
+    "Q": "FR-5", "R": "FR-6", "S": "FR-7", "T": "FR-8",
 
-        // Pared enfrente
-        "M": "FR-1",
-        "N": "FR-2",
-        "O": "FR-3",
-        "P": "FR-4",
-        "Q": "FR-5",
-        "R": "FR-6",
-        "S": "FR-7",
-        "T": "FR-8",
-        // pared derecha
-        "U": "DER-1",
-        "V": "DER-2",
-        "W": "DER-3",
-        "X": "DER-4",
-        "Y": "DER-5",
-        "Z": "DER-6",
-        "AA": "DER-7",
-        "AB": "DER-8",
-        "AC": "DER-9",
-        "AD": "DER-10",
-        "AE": "DER-11",
-        "AF": "DER-12",
-        "AG": "DER-13",
-        "AH": "DER-14",
+    // --- PARED DERECHA ---
+    "U": "DER-1", "V": "DER-2", "W": "DER-3", "X": "DER-4", 
+    "Y": "DER-5", "Z": "DER-6", "AA": "DER-7", "AB": "DER-8", 
+    "AC": "DER-9", "AD": "DER-10", "AE": "DER-11", "AF": "DER-12", 
+    "AG": "DER-13", "AH": "DER-14",
+    "AI": "P-AI", "AJ": "P-AJ", "AK": "P-AK", "AL": "P-AL",
+    "AM": "P-AM", "AN": "P-AN", "AÑ": "P-AÑ", "AO": "P-AO", "AP": "P-AP",
 
+    // --- PARED DE ATRÁS ---
+    "AQ": "P-AQ", "AR": "P-AR", "AS": "P-AS", "AT": "P-AT",
+    "AU": "P-AU", "AV": "P-AV", "AW": "P-AW",
 
-    };
-
+    // --- PARED IZQUIERDA (Mitad Inferior) ---
+    "AX": "P-AX", "AY": "P-AY", "AZ": "P-AZ", 
+    "BA": "P-BA", "BB": "P-BB", "BC": "P-BC", "BD": "P-BD"
+};
     const buscador = document.getElementById('buscador');
     const resultadosBox = document.getElementById('resultados');
     const svgMap = document.getElementById('plano-biblioteca');

@@ -37,6 +37,8 @@ $routes->group('', ['filter' => 'session'], static function ($routes) {
     $routes->get('/mapa', 'Mapa::index');
     $routes->get('/mapa/buscar', 'Mapa::buscar');
 
+    $routes->get('/importar_csv', 'Admin::importar_revistas');
+
 });
 
 

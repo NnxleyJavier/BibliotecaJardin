@@ -8,8 +8,11 @@ class LibroModel extends Model
     protected $primaryKey = 'id_libro';
     
     // ¡AQUÍ AGREGAMOS EL FOLIO DE ADQUISICIÓN!
-    protected $allowedFields = [
+  protected $allowedFields = [
         'folio_adquisicion', 'clasificacion_lomo', 'titulo', 'autor', 'volumen', 
-        'anio_publicacion', 'id_ubicacion', 'estado_fisico', 'datos_completos'
+        'anio_publicacion', 'id_ubicacion', 'estado_fisico', 'datos_completos',
+        'tipo_material', 'fecha_registro', 'issn', 'isbn', 'tomo', 
+        'numero_revista', 'serie', 'pais', 'estado_publicacion', 
+        'nota_contenido', 'estado_conservacion', 'ejemplares', 'observaciones'
     ];
 }
